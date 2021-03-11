@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  gollum:
+    image: gollumorg/gollum
+    container_name: gollum
+    # command:
+      # - "--ref=main"
+    user: "${PUID}:${PGID}"
+    volumes:
+      - ../wiki-data:/wiki
+    expose:
+      - 4567
+    networks:
+      - reverse-proxy
+      - wiki
+    restart: unless-stopped
+
+networks:
+  reverse-proxy:
+    external: true
+  wiki:
+    external: true
