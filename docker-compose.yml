@@ -20,4 +20,4 @@ networks:
   reverse-proxy:
     external: true
   wiki:
-    external: true
+    name: wiki
