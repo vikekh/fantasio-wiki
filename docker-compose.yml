@@ -4,7 +4,8 @@ services:
   gollum:
     image: gollumorg/gollum
     container_name: gollum
-    # command:
+    command:
+      # - "--h1-title"
       # - "--ref=main"
     user: "${PUID}:${PGID}"
     volumes:
